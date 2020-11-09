@@ -1,0 +1,8 @@
+name: Feesh
+main: io.github.metalcupcake5.Feesh.Feesh
+version: 1.0-SNAPSHOT
+author: metalcupcake5
+commands:
+  getItem:
+    usage: getItem
+    description: yes

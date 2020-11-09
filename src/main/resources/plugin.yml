@@ -1,0 +1,8 @@
+name: ${project.name}
+main: io.github.metalcupcake5.Feesh.Feesh
+version: ${project.version}
+author: metalcupcake5
+commands:
+  getItem:
+    usage: getItem
+    description: yes
