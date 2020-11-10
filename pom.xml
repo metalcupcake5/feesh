@@ -34,14 +34,10 @@
         </plugins>
     </build>
 
-    <properties>
-        <kotlin.version>1.4.20-RC</kotlin.version>
-    </properties>
-
     <repositories>
         <repository>
             <id>spigot-repo</id>
-            <url>https://hub.spigotmc.org/nexus/content/repositories/public/</url>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 

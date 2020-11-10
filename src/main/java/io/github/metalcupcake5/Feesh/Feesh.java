@@ -17,8 +17,6 @@ public class Feesh extends JavaPlugin {
         this.saveDefaultConfig();
         Boolean logging = this.getConfig().getBoolean("logging");
 
-        ItemManager.init();
-
         new FishingListener(this);
 
         getCommand("getItem").setExecutor(new GetItemCommand(this));

@@ -8,19 +8,22 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Shredder extends ItemType{
+public class No extends ItemType{
 
-    public Shredder(){
-        super("SHREDDER");
+    public No() {
+        super("NO");
     }
 
     @Override
     public ItemStack makeNewStack(){
         ItemStack item = new ItemStack(Material.FISHING_ROD);
         ItemMeta meta = item.getItemMeta();
-        meta.setDisplayName(ChatColor.GOLD + "Shredder");
+        meta.setDisplayName(ChatColor.GOLD + "No Rod");
         List<String> lores = new ArrayList<>();
-        lores.add(ChatColor.AQUA + "Blub");
+        lores.add(ChatColor.GRAY + "No Power: " + ChatColor.RED + "+1000");
+        lores.add(ChatColor.GRAY + "Strength: " + ChatColor.RED + "+Infinity");
+        lores.add(ChatColor.GRAY + "Sea Creature Chance: " + ChatColor.RED + "+Infinity%");
+        lores.add(ChatColor.AQUA + "No");
         meta.setLore(lores);
         item.setItemMeta(meta);
         return item;
