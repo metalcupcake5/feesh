@@ -8,4 +8,9 @@ public class ItemManager {
 
     public static final ItemType SHREDDER = new Shredder();
     public static final ItemType NO = new No();
+    public static final ItemType ROD_OF_LEGENDS = new RodOfLegends();
+    public static final ItemType ROD_OF_THE_SEA = new RodOfTheSea();
+    public static final ItemType SCUBA_TANK = new ScubaTank();
+    public static final ItemType BOTTLE_OF_AIR = new BottleOfAir();
+    public static final ItemType XP_SHARE = new xpshare();
 }

@@ -30,7 +30,7 @@ public class GetItemCommand implements CommandExecutor {
             if(ItemManager.ITEMS.containsKey(id)){
                 ItemStack item = ItemManager.ITEMS.get(id).makeNewStack();
                 inventory.addItem(item);
-                sender.sendMessage("added a rod to your inventory");
+                sender.sendMessage("Gave " + id);
             } else {
                 sender.sendMessage("Invalid item!");
             }

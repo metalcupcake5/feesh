@@ -2,6 +2,8 @@ package io.github.metalcupcake5.Feesh.items;
 
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Map;
+
 public abstract class ItemType {
 
     protected final String id;
@@ -12,4 +14,6 @@ public abstract class ItemType {
     }
 
     public abstract ItemStack makeNewStack();
+
+    public abstract Map<String, Integer> getStats();
 }
