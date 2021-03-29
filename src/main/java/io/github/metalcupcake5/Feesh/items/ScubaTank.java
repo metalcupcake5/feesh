@@ -34,8 +34,8 @@ public class ScubaTank extends ItemType{
     }
 
     @Override
-    public Map<String, Integer> getStats(){
-        Map<String, Integer> stats = new HashMap<>();
+    public Map<String, Double> getStats(){
+        Map<String, Double> stats = new HashMap<>();
         return stats;
     }
 }

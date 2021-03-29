@@ -15,5 +15,5 @@ public abstract class ItemType {
 
     public abstract ItemStack makeNewStack();
 
-    public abstract Map<String, Integer> getStats();
+    public abstract Map<String, Double> getStats();
 }

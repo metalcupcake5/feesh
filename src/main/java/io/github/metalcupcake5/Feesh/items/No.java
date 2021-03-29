@@ -35,10 +35,10 @@ public class No extends ItemType{
     }
 
     @Override
-    public Map<String, Integer> getStats(){
-        Map<String, Integer> stats = new HashMap<>();
-        stats.put("seaCreatureChance", 999999999);
-        stats.put("strength", 999999999);
+    public Map<String, Double> getStats(){
+        Map<String, Double> stats = new HashMap<>();
+        stats.put("seaCreatureChance", 999999999.0);
+        stats.put("strength", 999999999.0);
         return stats;
     }
 }

@@ -18,17 +18,45 @@ public class FishingUtils {
 
     private static Random random = new Random();
 
-    public static boolean caughtRare(int chance) {
-        int r = random.nextInt(100) + 1;
+    public static boolean caughtRare(double chance) {
+        int r = random.nextInt(10000) + 1;
 
-        if(chance >= r){
+        if(chance*100 >= r){
             return true;
         }
         return false;
     }
 
-    public static int calculateSeaCreatureChance(ItemStack heldItem) {
-        int seaCreatureChance = 99;
+    public static double calculateTreasureChance(ItemStack heldItem, ItemStack[] armor) {
+        double treasureChance = 0;
+        for(ItemType item : ItemManager.ITEMS.values()){
+            if(item.makeNewStack().isSimilar(heldItem)){
+                if(item.getStats().containsKey("treasureChance")){
+                    treasureChance += item.getStats().get("treasureChance");
+                }
+            }
+            for(ItemStack armorItem : armor){
+                if(item.makeNewStack().equals(armorItem)){
+                    treasureChance += item.getStats().get("treasureChance");
+                }
+            }
+        }
+        //System.out.println(ItemManager.CORAL_CHESTPLATE.m);
+        /*for(ItemStack armorItem : armor){
+            for(ItemType item : ItemManager.ITEMS.values()) {
+                if(item.makeNewStack().isSimilar(armorItem)){
+                    treasureChance += item.getStats().get("treasureChance");
+                }
+            }
+
+
+            System.out.println(armorItem.equals(ItemManager.CORAL_CHESTPLATE.makeNewStack()));
+        }*/
+        return treasureChance;
+    }
+
+    public static double calculateSeaCreatureChance(ItemStack heldItem) {
+        double seaCreatureChance = 20;
         for(ItemType item : ItemManager.ITEMS.values()){
             if(item.makeNewStack().isSimilar(heldItem)){
                 if(item.getStats().containsKey("seaCreatureChance")){

@@ -33,7 +33,6 @@ public class FishingListener implements Listener {
         ItemStack item = player.getItemInHand();
         if(state == PlayerFishEvent.State.FISHING) {
             FishHook hook = event.getHook();
-            System.out.println(FishingUtils.getBiteTime(hook));
             BukkitScheduler scheduler = plugin.getServer().getScheduler();
             scheduler.scheduleSyncDelayedTask(plugin, new Runnable() {
                 @Override
@@ -45,9 +44,11 @@ public class FishingListener implements Listener {
                 FishingUtils.setBiteTime(hook, 40);
             }
         } else if(state == PlayerFishEvent.State.CAUGHT_FISH) {
-            int seaCreatureChance = FishingUtils.calculateSeaCreatureChance(item);
+            double seaCreatureChance = FishingUtils.calculateSeaCreatureChance(item);
             boolean caughtSeaCreature = FishingUtils.caughtRare(seaCreatureChance);
+            double treasureChance = FishingUtils.calculateTreasureChance(item, player.getInventory().getArmorContents());
             boolean caughtTreasure = FishingUtils.caughtRare(20);
+            ChatUtils.sendDebug(player, seaCreatureChance + " scc\n" + treasureChance + " treasure chance");
             if(caughtSeaCreature){
                 Entity caught = event.getCaught();
                 Location location = caught.getLocation();

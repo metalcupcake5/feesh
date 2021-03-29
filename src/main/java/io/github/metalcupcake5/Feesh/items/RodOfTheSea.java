@@ -37,11 +37,11 @@ public class RodOfTheSea extends ItemType {
     }
 
     @Override
-    public Map<String, Integer> getStats(){
-        Map<String, Integer> stats = new HashMap<>();
-        stats.put("seaCreatureChance", 7);
-        stats.put("strength", 150);
-        stats.put("damage", 150);
+    public Map<String, Double> getStats(){
+        Map<String, Double> stats = new HashMap<>();
+        stats.put("seaCreatureChance", 7.0);
+        stats.put("strength", 150.0);
+        stats.put("damage", 150.0);
         return stats;
     }
 }
